@@ -39,7 +39,9 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="ParkLife" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="ParkLife" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="3WI-nC-P3o"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="hhE-gW-ANc" id="aIW-uU-UkV"/>
                     </connections>

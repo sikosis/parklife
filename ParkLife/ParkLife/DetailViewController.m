@@ -99,6 +99,20 @@
     
 }
 
+
+#pragma mark - PopoverDelegate method
+-(void)selectedItem:(NSString *)string
+{
+    NSLog(@"Blah stuff happens");
+    
+    // Dismiss the popover
+    if (_popoverPicker) {
+        [_filterPopover dismissPopoverAnimated:YES];
+        _filterPopover = nil;
+    }
+}
+
+
 #pragma mark - configureView
 
 - (void)configureView
@@ -137,7 +151,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc]
+    filterButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Filter"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
@@ -160,9 +174,23 @@
 -(IBAction)btnFilter:(id)sender {
     NSLog(@"Filter this shizzle!");
     
+    if (_popoverPicker == nil) {
+        _popoverPicker = [[PopoverViewController alloc] initWithStyle:UITableViewStylePlain];
+        
+        //Set this VC as the delegate.
+        _popoverPicker.delegate = self;
+    }
     
-    
-    
+    if (_filterPopover == nil) {
+        // Show
+        _filterPopover = [[UIPopoverController alloc] initWithContentViewController:_popoverPicker];
+        [_filterPopover presentPopoverFromBarButtonItem:(UIBarButtonItem *)sender
+                                    permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    } else {
+        // Hide
+        [_filterPopover dismissPopoverAnimated:YES];
+        _filterPopover = nil;
+    }
 }
 
 

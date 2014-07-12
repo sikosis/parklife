@@ -27,6 +27,7 @@
 		89F6FE671970C25400B7BA60 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE661970C25400B7BA60 /* Social.framework */; };
 		89F6FE691970C8CD00B7BA60 /* MS 10km Bike Ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */; };
 		89F6FE6C19712B0000B7BA60 /* URLConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F6FE6B19712B0000B7BA60 /* URLConnect.m */; };
+		89F6FE6F19713E6E00B7BA60 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F6FE6E19713E6E00B7BA60 /* PopoverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "MS 10km Bike Ride.gpx"; sourceTree = "<group>"; };
 		89F6FE6A19712B0000B7BA60 /* URLConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConnect.h; sourceTree = "<group>"; };
 		89F6FE6B19712B0000B7BA60 /* URLConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLConnect.m; sourceTree = "<group>"; };
+		89F6FE6D19713E6E00B7BA60 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		89F6FE6E19713E6E00B7BA60 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				899D06CE1970B9EF00272406 /* MasterViewController.m */,
 				899D06D01970B9EF00272406 /* DetailViewController.h */,
 				899D06D11970B9EF00272406 /* DetailViewController.m */,
+				89F6FE6D19713E6E00B7BA60 /* PopoverViewController.h */,
+				89F6FE6E19713E6E00B7BA60 /* PopoverViewController.m */,
 				899D06D31970B9EF00272406 /* Images.xcassets */,
 				899D06BF1970B9EF00272406 /* Supporting Files */,
 			);
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F6FE6F19713E6E00B7BA60 /* PopoverViewController.m in Sources */,
 				899D06C91970B9EF00272406 /* AppDelegate.m in Sources */,
 				899D06CF1970B9EF00272406 /* MasterViewController.m in Sources */,
 				899D06C51970B9EF00272406 /* main.m in Sources */,
