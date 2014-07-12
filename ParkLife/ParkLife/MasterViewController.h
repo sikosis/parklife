@@ -10,7 +10,22 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <NSXMLParserDelegate> {
+    NSXMLParser *parser;
+    NSMutableArray *feeds;
+    NSMutableDictionary *item;
+    NSMutableString *title;
+    NSMutableString *description;
+    NSMutableString *xcalDescription;
+    NSMutableString *xcalLocation;
+    NSMutableString *eventDate;
+    NSMutableString *eventAddress;
+    NSMutableString *link;
+    NSMutableString *eventImage;
+    
+    NSString *element;    
+    long counter;
+}
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

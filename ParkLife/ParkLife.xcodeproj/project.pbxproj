@@ -22,6 +22,10 @@
 		899D06DD1970B9EF00272406 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899D06BC1970B9EF00272406 /* UIKit.framework */; };
 		899D06E51970B9EF00272406 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 899D06E31970B9EF00272406 /* InfoPlist.strings */; };
 		899D06E71970B9EF00272406 /* ParkLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 899D06E61970B9EF00272406 /* ParkLifeTests.m */; };
+		89F6FE631970C23800B7BA60 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE621970C23800B7BA60 /* MapKit.framework */; };
+		89F6FE651970C24000B7BA60 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE641970C24000B7BA60 /* Accounts.framework */; };
+		89F6FE671970C25400B7BA60 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE661970C25400B7BA60 /* Social.framework */; };
+		89F6FE691970C8CD00B7BA60 /* MS 10km Bike Ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		899D06E21970B9EF00272406 /* ParkLifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParkLifeTests-Info.plist"; sourceTree = "<group>"; };
 		899D06E41970B9EF00272406 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		899D06E61970B9EF00272406 /* ParkLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkLifeTests.m; sourceTree = "<group>"; };
+		89F6FE621970C23800B7BA60 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		89F6FE641970C24000B7BA60 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		89F6FE661970C25400B7BA60 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "MS 10km Bike Ride.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F6FE671970C25400B7BA60 /* Social.framework in Frameworks */,
+				89F6FE651970C24000B7BA60 /* Accounts.framework in Frameworks */,
+				89F6FE631970C23800B7BA60 /* MapKit.framework in Frameworks */,
 				899D06BB1970B9EF00272406 /* CoreGraphics.framework in Frameworks */,
 				899D06BD1970B9EF00272406 /* UIKit.framework in Frameworks */,
 				899D06B91970B9EF00272406 /* Foundation.framework in Frameworks */,
@@ -104,6 +115,9 @@
 		899D06B71970B9EF00272406 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89F6FE661970C25400B7BA60 /* Social.framework */,
+				89F6FE641970C24000B7BA60 /* Accounts.framework */,
+				89F6FE621970C23800B7BA60 /* MapKit.framework */,
 				899D06B81970B9EF00272406 /* Foundation.framework */,
 				899D06BA1970B9EF00272406 /* CoreGraphics.framework */,
 				899D06BC1970B9EF00272406 /* UIKit.framework */,
@@ -115,6 +129,7 @@
 		899D06BE1970B9EF00272406 /* ParkLife */ = {
 			isa = PBXGroup;
 			children = (
+				89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */,
 				899D06C71970B9EF00272406 /* AppDelegate.h */,
 				899D06C81970B9EF00272406 /* AppDelegate.m */,
 				899D06CA1970B9EF00272406 /* Main.storyboard */,
@@ -235,6 +250,7 @@
 			files = (
 				899D06D41970B9EF00272406 /* Images.xcassets in Resources */,
 				899D06C31970B9EF00272406 /* InfoPlist.strings in Resources */,
+				89F6FE691970C8CD00B7BA60 /* MS 10km Bike Ride.gpx in Resources */,
 				899D06CC1970B9EF00272406 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +480,7 @@
 				899D06EC1970B9EF00272406 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		899D06ED1970B9EF00272406 /* Build configuration list for PBXNativeTarget "ParkLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +489,7 @@
 				899D06EF1970B9EF00272406 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

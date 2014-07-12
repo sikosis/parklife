@@ -15,6 +15,7 @@
 
 @implementation DetailViewController
 
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
@@ -31,6 +32,44 @@
     }        
 }
 
+
+-(void)setEventCoord:(CLLocationCoordinate2D)eventCoord {
+    // Clear Annotations
+//    for (id annotation in mapView.annotations) {
+//        [mapView removeAnnotation:annotation];
+//    }
+
+    // Zoom to region
+    MKCoordinateRegion region;
+    region.center = eventCoord;
+    region.span = MKCoordinateSpanMake(0.02, 0.02); //Zoom distance
+    region = [mapView regionThatFits:region];
+    [mapView setRegion:region animated:YES];
+    
+    
+    // Pin on map -- in the wrong #$&^#&*( place !!!
+    
+//    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+//    [annotation setCoordinate:eventCoord];
+//    [annotation setTitle:title];
+//    [mapView addAnnotation:annotation];
+
+    
+}
+
+
+-(void)setEventAddress:(NSString *)eventAddress {
+   // NSLog(@"%@",eventAddress);
+    
+    // grab the suburb and then put pins for everything around it ?!?!
+    
+    
+    
+    
+    
+}
+
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -38,14 +77,46 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
+    
+    mapView.showsUserLocation = YES;
+    
+    //    mapView.mapType = MKMapTypeSatellite;
+    mapView.mapType = MKMapTypeStandard;
+    
+    [self zoomToUserLocation:mapView.userLocation];
+    
 }
 
-- (void)viewDidLoad
-{
+
+- (void)zoomToUserLocation:(MKUserLocation *)userLocation {
+    if (!userLocation)
+        return;
+    
+    MKCoordinateRegion region;
+    region.center = userLocation.location.coordinate;
+    region.span = MKCoordinateSpanMake(0.02, 0.02); //Zoom distance
+    region = [mapView regionThatFits:region];
+    [mapView setRegion:region animated:YES];
+}
+
+
+-(void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self zoomToUserLocation:mapView.userLocation];
+}
+
+- (void)mapView:(MKMapView *)theMapView didUpdateToUserLocation:(MKUserLocation *)location {
+    [self zoomToUserLocation:location];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
