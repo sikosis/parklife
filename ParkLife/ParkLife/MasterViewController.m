@@ -123,6 +123,12 @@
     
 }
 
+
+-(void)parserDidEndDocument:(NSXMLParser *)parser {
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - geolocation
 
 - (CLLocationCoordinate2D) geoCodeUsingAddress:(NSString *)address
@@ -145,6 +151,8 @@
 
     
     /*
+     
+     // apple maps geolocating not working :(
     
     __block CLLocationCoordinate2D coordinate;
     
@@ -186,6 +194,7 @@
 }
 
 
+
 #pragma mark - Segue
 
 // not used
@@ -214,11 +223,6 @@
     return feeds.count;
 }
 
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
-    
-    [self.tableView reloadData];
-    
-}
 
 
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*) indexPath {
@@ -241,15 +245,6 @@
     
     [titleLabel setText:[[feeds objectAtIndex:indexPath.row] objectForKey: @"title"]];
 
-  //  NSString *_desc = [[feeds objectAtIndex:indexPath.row] objectForKey: @"description"];
-
-    
-
-    
-    
-    //eventThumbnail.image = [images objectAtIndex:indexPath.row];
-
-    
     eventThumbnail.image = nil;
     
     dispatch_async(kBgQueue, ^{
@@ -365,7 +360,7 @@
         _eventAddress = @""; // set to blank it's all in lines anyway
         
         for (id object in lines) {
-            NSLog(@"%@",object);
+            //NSLog(@"%@",object);
             
             if ([object rangeOfString:@", Australia"].location != NSNotFound) {
                // _eventAddress = [lines objectAtIndex:5];
@@ -404,7 +399,6 @@
         NSLog(@"%f %f",coord.longitude,coord.latitude);
         
         self.detailViewController.eventCoord = coord;
-        
         self.detailViewController.eventAddress = _eventAddress;
 
     }

@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "URLConnect.h"
+
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -14,6 +16,8 @@
 @end
 
 @implementation DetailViewController
+
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 
 #pragma mark - Managing the detail item
@@ -55,6 +59,28 @@
 //    [mapView addAnnotation:annotation];
 
     
+    // should we then pull in other datasets at this point ?!?!?
+    
+    // 53,366 rows ... uggh, proly shouldn't access this directly
+    // perhaps we could have a custom reduced set
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.brisbane.qld.gov.au/sites/default/files/dataset_park_facilties_part_1.csv"]];
+
+    URLConnect *connection = [[URLConnect alloc]initWithRequest:urlRequest];
+    
+    [connection setCompletionBlock:^(id obj, NSError *err) {
+        if (!err) {
+            NSString *block = [[NSString alloc] initWithData:obj encoding:NSUTF8StringEncoding];
+            NSArray *lines = [block componentsSeparatedByString:@"\n"];
+            NSLog(@"%@",lines);
+            
+        } else {
+            NSLog(@"Something went wrong :(");
+        }
+        
+    }];
+    
+    [connection start];
 }
 
 

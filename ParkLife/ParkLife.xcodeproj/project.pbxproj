@@ -26,6 +26,7 @@
 		89F6FE651970C24000B7BA60 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE641970C24000B7BA60 /* Accounts.framework */; };
 		89F6FE671970C25400B7BA60 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F6FE661970C25400B7BA60 /* Social.framework */; };
 		89F6FE691970C8CD00B7BA60 /* MS 10km Bike Ride.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */; };
+		89F6FE6C19712B0000B7BA60 /* URLConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F6FE6B19712B0000B7BA60 /* URLConnect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		89F6FE641970C24000B7BA60 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		89F6FE661970C25400B7BA60 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		89F6FE681970C8CD00B7BA60 /* MS 10km Bike Ride.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "MS 10km Bike Ride.gpx"; sourceTree = "<group>"; };
+		89F6FE6A19712B0000B7BA60 /* URLConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConnect.h; sourceTree = "<group>"; };
+		89F6FE6B19712B0000B7BA60 /* URLConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLConnect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				899D06C71970B9EF00272406 /* AppDelegate.h */,
 				899D06C81970B9EF00272406 /* AppDelegate.m */,
 				899D06CA1970B9EF00272406 /* Main.storyboard */,
+				89F6FE6A19712B0000B7BA60 /* URLConnect.h */,
+				89F6FE6B19712B0000B7BA60 /* URLConnect.m */,
 				899D06CD1970B9EF00272406 /* MasterViewController.h */,
 				899D06CE1970B9EF00272406 /* MasterViewController.m */,
 				899D06D01970B9EF00272406 /* DetailViewController.h */,
@@ -274,6 +279,7 @@
 				899D06CF1970B9EF00272406 /* MasterViewController.m in Sources */,
 				899D06C51970B9EF00272406 /* main.m in Sources */,
 				899D06D21970B9EF00272406 /* DetailViewController.m in Sources */,
+				89F6FE6C19712B0000B7BA60 /* URLConnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +405,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ParkLife/ParkLife-Prefix.pch";
 				INFOPLIST_FILE = "ParkLife/ParkLife-Info.plist";
@@ -412,7 +417,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ParkLife/ParkLife-Prefix.pch";
 				INFOPLIST_FILE = "ParkLife/ParkLife-Info.plist";
