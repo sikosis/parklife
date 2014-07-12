@@ -64,6 +64,8 @@
     // 53,366 rows ... uggh, proly shouldn't access this directly
     // perhaps we could have a custom reduced set
     
+    /*
+    
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.brisbane.qld.gov.au/sites/default/files/dataset_park_facilties_part_1.csv"]];
 
     URLConnect *connection = [[URLConnect alloc]initWithRequest:urlRequest];
@@ -81,6 +83,8 @@
     }];
     
     [connection start];
+     
+     */
 }
 
 
@@ -95,14 +99,15 @@
     
 }
 
+#pragma mark - configureView
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+//    if (self.detailItem) {
+//        self.detailDescriptionLabel.text = [self.detailItem description];
+//    }
     
     mapView.showsUserLocation = YES;
     
@@ -110,6 +115,8 @@
     mapView.mapType = MKMapTypeStandard;
     
     [self zoomToUserLocation:mapView.userLocation];
+    
+    
     
 }
 
@@ -129,15 +136,35 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Filter"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                     action:@selector(btnFilter:)];
+    self.navigationItem.rightBarButtonItem = filterButton;
+    
     [self configureView];
 }
 
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self zoomToUserLocation:mapView.userLocation];
 }
+
+
+#pragma mark - Buttons
+
+-(IBAction)btnFilter:(id)sender {
+    NSLog(@"Filter this shizzle!");
+    
+    
+    
+    
+}
+
 
 - (void)mapView:(MKMapView *)theMapView didUpdateToUserLocation:(MKUserLocation *)location {
     [self zoomToUserLocation:location];

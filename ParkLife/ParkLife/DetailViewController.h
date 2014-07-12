@@ -16,9 +16,7 @@
     
 }
 
-//-(IBAction)zoomIn:(id)sender;
-//-(IBAction)changeMapType:(id)sender;
-
+-(IBAction)btnFilter:(id)sender;
 
 @property (strong, nonatomic) id detailItem;
 
